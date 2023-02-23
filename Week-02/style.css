@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+header, h2 {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0.9rem;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    background: #0a0a23 ;
+    color:#fff;
+    border: solid #fdb347;
+    background-color: .3s ease;
+    transition: 1s;
+}
+
+.header ,h2:hover{
+    transform: scale(1);
+    z-index: 2;
+    background-color:burlywood;
+    cursor: pointer;
+}
+img {
+    width: 30rem;
+    height: 30rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
+#grid-floats {
+    font-family: Georgia, 'Times New Roman', Times, serif
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+#grid-flex {
+    font-family: Georgia, 'Times New Roman', Times, serif
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.grid-item {
+    border: 0.0625rem solid black;
+    transition: 1s;
+  
+    
+    
+}
+.grid-item:hover{
+    transform: scale(1.2);
+    z-index: 2;
+    cursor: pointer;
+   
+  
+}
+
+@media (min-width: 320px) {
+    .grid-item:first-child {
+        width: 100%;
+        background-color: #eed65e;
+    }
+    .grid-item:nth-child(n+2) {
+        background-color: rgb(222, 177, 64);
+        width: 48.5%;
+        margin:0%
+    }
+    img {
+        display: flex;
+        width: 49%;
+        height: auto;
+    }
+}
+
+@media (min-width: 640px) {
+    .grid-item:first-child {
+        width: 49%;
+        background-color: rgb(112, 240, 100);
+    }
+    .grid-item:nth-child(2) {
+        width: 49%;
+        background-color: rgb(122, 207, 129);
+    }
+    .grid-item:nth-child(n+3) {
+        background-color: rgb(106, 240, 119);
+        width: 32.1%;
+    }
+    img {
+        display: flex;
+        width: 49%;
+        height: auto;
+    }
+}
+@media (min-width: 1024px) {
+    .grid-item:first-child {
+        width: 49%;
+        background-color: rgb(247, 247, 133);
+    }
+    .grid-item:nth-child(2) {
+        width: 24%;
+        background-color: rgb(249, 248, 176);
+    }
+    .grid-item:nth-child(3) {
+        width: 24%;
+        background-color: rgba(242, 246, 130, 0.995);
+    }
+    .grid-item:nth-child(n+4) {
+        background-color: rgb(234, 235, 140);
+        width: 24.1%;
+
+    }
+    img {
+        display: flex;
+        width: 49%;
+        height: auto;
+    }
+}
+  
+  
+  
+  
+  
