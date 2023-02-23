@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.left-column {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+
+.right-column {
+    float: left;
+    width: 65%;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-content {
+    margin-left: 30px;
+}
+
+.skills {
+    margin-bottom: 20px;
+}
+
+.skill {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.experience-item p {
+    font-style: italic;
+    margin-bottom: 5px;
+}
