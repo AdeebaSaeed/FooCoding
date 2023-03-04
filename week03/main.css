@@ -1,0 +1,562 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+/* first 3 headers nav */
+
+.header-main  {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    white-space: nowrap;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    text-transform: none;
+}
+
+.header-first {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    font-size: 1rem;
+    white-space: wrap;
+    color: #a6a9b1;
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    text-transform: none;
+    transition: color 125ms ease;
+}
+.header-last {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: .85rem;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    background-color: rgb(244, 205, 13);
+    
+   
+    color: #000510;
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: -.01em;
+    text-transform: none;
+    transition: color 125ms ease;
+}
+.logo-img {
+    width: 100px;
+    height: auto;
+    padding-top: 1.75rem;
+    padding-left: 1.75rem;
+    padding-bottom: 1.75rem;
+    justify-content: left;
+}
+
+.flag-img {
+    width: 35px;
+    height: auto;
+    justify-self: left;
+    justify-content: left;
+}
+
+#main-nav {
+    text-align: left;
+    background-color: none;
+    top: initial;
+    left: initial;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-decoration: none;
+    transition: color 125ms ease
+    
+}
+
+nav ul {
+    display: flex;
+    margin-left: 3em;
+    margin-bottom: 0;
+    gap: 5px;
+    flex-wrap: nowrap;
+    gap: 1rem;
+}
+
+a {
+    color: #505666BF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    font-weight: 300;
+}
+
+img {
+    height: auto;
+    cursor: pointer;
+
+}
+
+ul {
+    list-style: none;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    background-color: #f3f3f5;
+    color: #a6a9b1;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+
+#header-first-image {
+    width: 25px;
+    height: auto;
+}
+
+.li-header-first-image {
+    grid-column: 14 / 15;
+    justify-self: center;
+}
+
+.li-partners-with-us {
+    grid-column: 12 / 14;
+    justify-self: center;
+
+}
+
+.li-newsletter {
+    grid-column: 11 / 12;
+}
+.li-news {
+    color: black;
+    font-weight: 600;
+}
+
+.li-newsletter:hover, .li-news:hover, .li-partners-with-us:hover, .li-event:hover, .li-spaces:hover, .li-programs:hover {
+    color: black;
+    font-weight: 600;
+}
+
+.down {
+    background-color: #fd3;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+.grid {
+    background-color: rgb(240, 238, 238);
+    height: auto;
+
+}
+
+.grid-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+}
+
+.title-ukraines-war, .title-unicorn-founder, .title-bioinspired-drones, .title-new-sensor, .title-tnw-agenda {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 1rem;
+}
+
+.img-ukraines-war, .img-unicorn-founder, .img-bioinspired-drones, .img-new-sensor, .img-tnw-agenda {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+
+}
+
+.figcaption-ukraines-war, .figcaption-unicorn-founder, .figcaption-bioinspired-drones, .figcaption-new-sensor, .figcaption-tnw-agenda {
+    height: 1.2rem;
+    width: 100%;
+    margin-top: -4rem;
+    margin-left: 1rem;
+    padding-right: 1rem;
+    z-index: 1;
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.figcaption-tnw-agenda {
+    height: 1.2rem;
+    width: 100%;
+    margin-top: -150px;
+    margin-left: 1rem;
+    z-index: 1;
+    position: relative;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+h3 {
+    margin-top: -5em;
+    margin-left: 1rem;
+    position: relative;
+    color: white;
+    font-weight: 500;
+}
+
+.h3-tnw-agenda {
+    margin-top: -200px;
+    margin-left: 1rem;
+    position: relative;
+    color: white;
+    font-weight: 700; 
+}
+
+.button-tnw-agenda {
+    margin-top: -6rem;
+    position: relative;
+    width: 20%;
+    border-radius: 20px;
+    z-index: 1;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 800;
+}
+
+/* Popular stories  */
+
+.popular-stories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.stories-non-linear-work, .stories-new-sensor, .stories-mesopotamians, .stories-mesopotamians, .stories-bioinspired-drones, .stories-first-battery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+h2.work-with-us {
+    text-align: center;
+    font-size: 3rem;
+    color: #6644FF;
+}
+
+/* Latest news  */
+
+.h1-latest-news {
+    text-align: left;
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.latest-news {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.latest-news-insect {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.h2-insect {
+    color:#a6a9b1;;
+}
+.h2-insect:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.see-all-latest-news {
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 3rem;
+    background-color: #6644FF;
+    border-color: #6644FF;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.reach-your-goal {
+    color: #8899AA;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.work-with-us {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+p.tnw-work {
+    font-size: 1.3rem;
+    text-align: center;
+    color: #445566;
+    padding-bottom: 1rem;
+}
+
+/* Get in touch section */
+
+.get-in-touch {
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.8rem;
+    color: white;
+    border: none;
+    background-color: #6644FF;
+    border-radius: 5px;
+}
+
+.get-in-touch:hover {
+    background-color: #6f59cd;
+}
+
+a.a-stories {
+    color: black;
+}
+a.a-stories:hover {
+    text-decoration: underline solid rgb(135, 71, 135);
+}
+
+.newsletter {
+    height: 300px;
+    background-color:#64f;
+}
+
+.p-newsletter-top {
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 800;
+    padding-top: 3rem;
+}
+
+.p-newsletter-below, .p-subscription {
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.div-subscription {
+
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background-color: #9887e4;
+    height: 50px;
+    width:auto
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+#input-email {
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-top: 1rem;
+}
+
+::placeholder {
+    color: rgb(211, 201, 201); 
+}
+
+#input-submit {
+    justify-items: left;
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.check-box {
+    
+    margin-left: 5rem;
+    color:rgb(142, 144, 145)
+}
+
+footer {
+    background-color: rgb(12, 12, 12);
+    color: white
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
+.box-1 {
+    grid-column: span 2;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+    font-size: 2rem;
+}
+
+/* Subsection ecosystem */
+
+.subsection-ecosystems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+.h2-ecosystems {
+    color:#a6a9b1;;
+}
+.h2-insect:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.h1-ecosystem-main {
+    text-align: left;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+.see-all-latest-news {
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 3rem;
+    background-color: #6644FF;
+    border-color: #6644FF;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.footer-last {
+    text-align: center;
+    color: rgb(136, 153, 170);
+    padding-bottom: 2rem;
+}
+
+.footer-last > .financial {
+    color: #0b0000;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+}
+
+.more-about-tnw-left, .more-about-tnw-right {
+    color: #66DDFF;
+}
+
+.box-2 {
+    display: flex;
+}
+.more-about-white {
+    color: white;
+}
+
+hr {
+    color: rgb(142, 144, 145);
+    border: 0.2px solid;
+}
+
+
+@media (min-width: 780px) {
+    .grid-hero {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    } 
+
+    .popular-stories {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .stories-non-linear-work, .stories-new-sensor, .stories-mesopotamians, .stories-mesopotamians, .stories-bioinspired-drones, .stories-first-battery {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .latest-news {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .latest-news-insect {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .div-ecosystem {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .div-ecosystem-right {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .subsection-ecosystem-main {
+        padding-top: 1rem;
+    }
+}
+   
+
+
+    
+
