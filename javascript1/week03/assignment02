@@ -1,0 +1,133 @@
+// String
+let myString = "hello,this,is,a,difficult,to,read,sentence";
+console.log(myString.length)
+myString = myString.replace(/,/g, ' ');
+console.log(myString)
+
+// Arrays
+let favoriteAnimals = ["blowfish", "capricorn", "giraffe"];
+favoriteAnimals.push('turtle');
+console.log(favoriteAnimals);
+let index = favoriteAnimals.indexOf('blowfish');
+console.log("the index of blowfish is :" + index)
+favoriteAnimals.splice(index + 1,0, "meerkat");
+console.log("add meerkat after blowfish :")
+console.log(favoriteAnimals);
+console.log("The array has a length of :" + favoriteAnimals.length);
+let index1 = favoriteAnimals.indexOf('giraffe');
+favoriteAnimals.splice(index1,1)
+console.log(favoriteAnimals);
+let index2=favoriteAnimals.indexOf('meerkat')
+console.log(" The item you are looking for is at index: " + index2)
+
+
+//More Javascript 
+// 1.Function with 3 arguments
+function sum(x, y, z) {
+    return x + y + z;
+  }
+
+  //2. Function colorCar
+  function colorCar(color) {
+    console.log(`A ${color} car`);
+  }
+  
+  // 3. create an object function
+  let peter = {
+    name: "Peter",
+    surname: "Pettson",
+    age: 32,
+    job: "teacher",
+  };
+  
+  function printOut(obj) {
+    let entries = Object.entries(obj);
+    for (const [key, value] of entries) {
+      console.log(`${key}: ${value}`);
+    }
+  }
+  
+  // 4 function named VehicleType
+  function vehicleType(color, code) {
+    if (code == 1) {
+      console.log(`a ${color} car`);
+    } else if (code == 2) {
+      console.log(`a ${color} motorbike`);
+    }
+  }
+
+  // 5. single line code
+  
+  3 === 3 ? console.log("yes") : console.log("no");
+
+  //6. add 3 parameters to vechicle function
+  
+  function vehicle(color, code, age) {
+    let transport = listOfVehicles.splice(code - 1, 1);
+    if (age > 1) {
+      console.log(`a ${color} used ${transport}`);
+    } else {
+      console.log(`a ${color} new ${transport}`);
+    }
+  }
+  
+  // 7 and 8  make list of vehicles
+  let listOfVehicles = ["motorbike", "caravan", "bike", "truck"];
+  const thirdElement = listOfVehicles.splice(2, 1);
+  console.log(thirdElement)
+
+  // 9 change the function vehicle to print green bike
+  function vehicleTwo(color, code, age) {
+    let type = vehicle[code -1];
+    let vehicleAge = age > 0 ? "used" : "new";
+    console.log(`a ${color} ${vehicleAge} ${type}`);
+  };
+  vehicleTwo("green", 3, 1);
+
+  // 10 and 11 use list of aruguments to write an advertisment
+  
+  function printAdvertisement(arr) {
+    let advertisment = `Amazing Joe's Garage, we service`;
+    for (let i = 0; i < arr.length - 1; i++) {
+      advertisment += ` ${arr[i]}s,`;
+    }
+    advertisment = advertisment.substring(0, advertisment.length - 1);
+    advertisment += ` and ${arr[arr.length - 1]}s.`;
+    console.log(advertisment);
+  }
+  
+  // 12 create an empty object
+  let emptyObject = {};
+  // 13 & 14 create an object that contains teachers and languages
+  let teachers = {
+    teachers: ["Tommy", "Sahin"],
+    languages: ["HTML5", "CSS3", "JavaScript"],
+  };
+  
+  // 15change arrays
+  let x = [1, 2, 3];
+  let y = [1, 2, 3];
+  let z = y;
+  
+  console.log(
+    "I think x == y will be False, x === y will be False, z == y  will be True and z == x will be False"
+  );
+  
+  // 16 changes object
+  let o1 = { foo: "bar" };
+  let o2 = { foo: "bar" };
+  let o3 = o2;
+  
+  o2.group = "M11";
+  console.log(o3);
+  console.log("o3 had been changed");
+  o1.group = "M12";
+  console.log(o3);
+  console.log("o3 had not been changed");
+  console.log("I think order doesn't matter");
+  
+  // 17 typeof return
+  console.log(`let bar = 42;
+              typeof typeof bar; 
+              returns string because first we get "number" instead of "typeof bar"
+              and that has a type of string.`);
