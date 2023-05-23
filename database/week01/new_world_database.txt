@@ -1,0 +1,902 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hr                 |
+| mysql              |
+| new_world          |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> USE new_world;
+Database changed
+mysql> SHOW TABLES;
++---------------------+
+| Tables_in_new_world |
++---------------------+
+| city                |
+| country             |
+| countrylanguage     |
++---------------------+
+3 rows in set (0.00 sec)
+
+mysql> SHOW COLUMNS FROM country;
++----------------+---------------------------------------------------------------------------------------+------+-----+---------+-------+
+| Field          | Type                                                                                  | Null | Key | Default | Extra |
++----------------+---------------------------------------------------------------------------------------+------+-----+---------+-------+
+| Code           | char(3)                                                                               | NO   | PRI |         |       |
+| Name           | char(52)                                                                              | NO   |     |         |       |
+| Continent      | enum('Asia','Europe','North America','Africa','Oceania','Antarctica','South America') | NO   |     | Asia    |       |
+| Region         | char(26)                                                                              | NO   |     |         |       |
+| SurfaceArea    | float(10,2)                                                                           | NO   |     | 0.00    |       |
+| IndepYear      | smallint(6)                                                                           | YES  |     | NULL    |       |
+| Population     | int(11)                                                                               | NO   |     | 0       |       |
+| LifeExpectancy | float(3,1)                                                                            | YES  |     | NULL    |       |
+| GNP            | float(10,2)                                                                           | YES  |     | NULL    |       |
+| GNPOld         | float(10,2)                                                                           | YES  |     | NULL    |       |
+| LocalName      | char(45)                                                                              | NO   |     |         |       |
+| GovernmentForm | char(45)                                                                              | NO   |     |         |       |
+| HeadOfState    | char(60)                                                                              | YES  |     | NULL    |       |
+| Capital        | int(11)                                                                               | YES  |     | NULL    |       |
+| Code2          | char(2)                                                                               | NO   |     |         |       |
++----------------+---------------------------------------------------------------------------------------+------+-----+---------+-------+
+15 rows in set (0.01 sec)
+
+mysql> SHOW COLUMNS FROM countrylanguage;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| CountryCode | char(3)       | NO   | PRI |         |       |
+| Language    | char(30)      | NO   | PRI |         |       |
+| IsOfficial  | enum('T','F') | NO   |     | F       |       |
+| Percentage  | float(4,1)    | NO   |     | 0.0     |       |
++-------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT name FROM COUNTRY
+    -> WHERE population>8000000;
++---------------------------------------+
+| name                                  |
++---------------------------------------+
+| Afghanistan                           |
+| Angola                                |
+| Argentina                             |
+| Australia                             |
+| Austria                               |
+| Belgium                               |
+| Burkina Faso                          |
+| Bangladesh                            |
+| Bulgaria                              |
+| Belarus                               |
+| Bolivia                               |
+| Brazil                                |
+| Canada                                |
+| Chile                                 |
+| China                                 |
+| Côte d?Ivoire                         |
+| Cameroon                              |
+| Congo, The Democratic Republic of the |
+| Colombia                              |
+| Cuba                                  |
+| Czech Republic                        |
+| Germany                               |
+| Dominican Republic                    |
+| Algeria                               |
+| Ecuador                               |
+| Egypt                                 |
+| Spain                                 |
+| Ethiopia                              |
+| France                                |
+| United Kingdom                        |
+| Ghana                                 |
+| Greece                                |
+| Guatemala                             |
+| Haiti                                 |
+| Hungary                               |
+| Indonesia                             |
+| India                                 |
+| Iran                                  |
+| Iraq                                  |
+| Italy                                 |
+| Japan                                 |
+| Kazakstan                             |
+| Kenya                                 |
+| Cambodia                              |
+| South Korea                           |
+| Sri Lanka                             |
+| Morocco                               |
+| Madagascar                            |
+| Mexico                                |
+| Mali                                  |
+| Myanmar                               |
+| Mozambique                            |
+| Malawi                                |
+| Malaysia                              |
+| Niger                                 |
+| Nigeria                               |
+| Netherlands                           |
+| Nepal                                 |
+| Pakistan                              |
+| Peru                                  |
+| Philippines                           |
+| Poland                                |
+| North Korea                           |
+| Portugal                              |
+| Romania                               |
+| Russian Federation                    |
+| Saudi Arabia                          |
+| Sudan                                 |
+| Senegal                               |
+| Somalia                               |
+| Sweden                                |
+| Syria                                 |
+| Thailand                              |
+| Tunisia                               |
+| Turkey                                |
+| Taiwan                                |
+| Tanzania                              |
+| Uganda                                |
+| Ukraine                               |
+| United States                         |
+| Uzbekistan                            |
+| Venezuela                             |
+| Vietnam                               |
+| Yemen                                 |
+| Yugoslavia                            |
+| South Africa                          |
+| Zambia                                |
+| Zimbabwe                              |
++---------------------------------------+
+88 rows in set (0.01 sec)
+
+mysql> SELECT name FROM COUNTRY
+    -> WHERE name LIKE '%land%';
++----------------------------------------------+
+| name                                         |
++----------------------------------------------+
+| Netherlands Antilles                         |
+| Bouvet Island                                |
+| Cocos (Keeling) Islands                      |
+| Switzerland                                  |
+| Cook Islands                                 |
+| Christmas Island                             |
+| Cayman Islands                               |
+| Finland                                      |
+| Fiji Islands                                 |
+| Falkland Islands                             |
+| Faroe Islands                                |
+| Greenland                                    |
+| Heard Island and McDonald Islands            |
+| Ireland                                      |
+| Iceland                                      |
+| Marshall Islands                             |
+| Northern Mariana Islands                     |
+| Norfolk Island                               |
+| Netherlands                                  |
+| New Zealand                                  |
+| Poland                                       |
+| South Georgia and the South Sandwich Islands |
+| Solomon Islands                              |
+| Swaziland                                    |
+| Turks and Caicos Islands                     |
+| Thailand                                     |
+| United States Minor Outlying Islands         |
+| Virgin Islands, British                      |
+| Virgin Islands, U.S.                         |
++----------------------------------------------+
+29 rows in set (0.00 sec)
+
+mysql> SELECT name FROM city
+    -> WHERE population BETWEEN 500000 AND 1000000;
++--------------------------------+
+| name                           |
++--------------------------------+
+| Amsterdam                      |
+| Rotterdam                      |
+| Oran                           |
+| Dubai                          |
+| Rosario                        |
+| Lomas de Zamora                |
+| Quilmes                        |
+| Almirante Brown                |
+| La Plata                       |
+| Mar del Plata                  |
+| Adelaide                       |
+| Khulna                         |
+| Cotonou                        |
+| Santa Cruz de la Sierra        |
+| La Paz                         |
+| El Alto                        |
+| Campinas                       |
+| São Gonçalo                    |
+| Nova Iguaçu                    |
+| São Luís                       |
+| Maceió                         |
+| Duque de Caxias                |
+| São Bernardo do Campo          |
+| Teresina                       |
+| Natal                          |
+| Osasco                         |
+| Campo Grande                   |
+| Santo André                    |
+| João Pessoa                    |
+| Jaboatão dos Guararapes        |
+| Contagem                       |
+| São José dos Campos            |
+| Glasgow                        |
+| Ouagadougou                    |
+| Shubra al-Khayma               |
+| Valencia                       |
+| Sevilla                        |
+| Zaragoza                       |
+| Málaga                         |
+| Soweto                         |
+| Johannesburg                   |
+| Port Elizabeth                 |
+| Pretoria                       |
+| Inanda                         |
+| Durban                         |
+| Cebu                           |
+| Zamboanga                      |
+| Pasig                          |
+| Ciudad de Guatemala            |
+| Port-au-Prince                 |
+| Tegucigalpa                    |
+| Malang                         |
+| Bandar Lampung                 |
+| Bekasi                         |
+| Padang                         |
+| Surakarta                      |
+| Madurai                        |
+| Haora (Howrah)                 |
+| Varanasi (Benares)             |
+| Patna                          |
+| Srinagar                       |
+| Agra                           |
+| Coimbatore                     |
+| Thane (Thana)                  |
+| Allahabad                      |
+| Meerut                         |
+| Vishakhapatnam                 |
+| Jabalpur                       |
+| Amritsar                       |
+| Faridabad                      |
+| Vijayawada                     |
+| Gwalior                        |
+| Jodhpur                        |
+| Nashik (Nasik)                 |
+| Hubli-Dharwad                  |
+| Solapur (Sholapur)             |
+| Ranchi                         |
+| Bareilly                       |
+| Guwahati (Gauhati)             |
+| Shambajinagar (Aurangabad)     |
+| Cochin (Kochi)                 |
+| Rajkot                         |
+| Kota                           |
+| Thiruvananthapuram (Trivandrum |
+| Pimpri-Chinchwad               |
+| Jalandhar (Jullundur)          |
+| Gorakhpur                      |
+| Chandigarh                     |
+| Mosul                          |
+| Karaj                          |
+| Ahvaz                          |
+| Qom                            |
+| Kermanshah                     |
+| Jerusalem                      |
+| Torino                         |
+| Palermo                        |
+| Genova                         |
+| Sendai                         |
+| Chiba                          |
+| Sakai                          |
+| Kumamoto                       |
+| Okayama                        |
+| Sagamihara                     |
+| Hamamatsu                      |
+| Kagoshima                      |
+| Funabashi                      |
+| Higashiosaka                   |
+| Hachioji                       |
+| Sanaa                          |
+| Amman                          |
+| Phnom Penh                     |
+| Calgary                        |
+| Toronto                        |
+| North York                     |
+| Winnipeg                       |
+| Edmonton                       |
+| Mississauga                    |
+| Scarborough                    |
+| Vancouver                      |
+| Bangui                         |
+| Baotou                         |
+| Shenzhen                       |
+| Hohhot                         |
+| Handan                         |
+| Wuxi                           |
+| Xuzhou                         |
+| Datong                         |
+| Yichun                         |
+| Benxi                          |
+| Luoyang                        |
+| Suzhou                         |
+| Xining                         |
+| Huainan                        |
+| Jixi                           |
+| Daqing                         |
+| Fuxin                          |
+| Amoy [Xiamen]                  |
+| Liuzhou                        |
+| Shantou                        |
+| Jinzhou                        |
+| Mudanjiang                     |
+| Yinchuan                       |
+| Changzhou                      |
+| Zhangjiakou                    |
+| Dandong                        |
+| Hegang                         |
+| Kaifeng                        |
+| Bishkek                        |
+| Cartagena                      |
+| Cúcuta                         |
+| Bucaramanga                    |
+| Brazzaville                    |
+| Pointe-Noire                   |
+| Lubumbashi                     |
+| Mbuji-Mayi                     |
+| Hamhung                        |
+| Chongjin                       |
+| Nampo                          |
+| Songnam                        |
+| Puchon                         |
+| Suwon                          |
+| Anyang                         |
+| Chonju                         |
+| Chongju                        |
+| Koyang                         |
+| Ansan                          |
+| Pohang                         |
+| Athenai                        |
+| Zagreb                         |
+| Vientiane                      |
+| Riga                           |
+| Monrovia                       |
+| Bengasi                        |
+| Vilnius                        |
+| Antananarivo                   |
+| Bamako                         |
+| Rabat                          |
+| Marrakech                      |
+| Fès                            |
+| Tanger                         |
+| Salé                           |
+| Nouakchott                     |
+| Naucalpan de Juárez            |
+| Mexicali                       |
+| Culiacán                       |
+| Acapulco de Juárez             |
+| Tlalnepantla de Baz            |
+| Mérida                         |
+| Chihuahua                      |
+| San Luis Potosí                |
+| Guadalupe                      |
+| Toluca                         |
+| Aguascalientes                 |
+| Querétaro                      |
+| Morelia                        |
+| Hermosillo                     |
+| Saltillo                       |
+| Torreón                        |
+| Centro (Villahermosa)          |
+| Chisinau                       |
+| Ulan Bator                     |
+| Mandalay                       |
+| Kathmandu                      |
+| Managua                        |
+| Ogbomosho                      |
+| Kano                           |
+| Oslo                           |
+| Peshawar                       |
+| Quetta                         |
+| Islamabad                      |
+| Asunción                       |
+| Arequipa                       |
+| Trujillo                       |
+| Chiclayo                       |
+| Lisboa                         |
+| Lódz                           |
+| Kraków                         |
+| Wroclaw                        |
+| Poznan                         |
+| Marseille                      |
+| Stockholm                      |
+| Köln                           |
+| Frankfurt am Main              |
+| Essen                          |
+| Dortmund                       |
+| Stuttgart                      |
+| Düsseldorf                     |
+| Bremen                         |
+| Duisburg                       |
+| Hannover                       |
+| Mekka                          |
+| Medina                         |
+| Pikine                         |
+| Dakar                          |
+| Freetown                       |
+| Mogadishu                      |
+| Colombo                        |
+| Khartum                        |
+| Sharq al-Nil                   |
+| Helsinki [Helsingfors]         |
+| Hims                           |
+| Dushanbe                       |
+| Taichung                       |
+| Tainan                         |
+| Panchiao                       |
+| N´Djaména                      |
+| Tunis                          |
+| Gaziantep                      |
+| Konya                          |
+| Mersin (Içel)                  |
+| Antalya                        |
+| Ashgabat                       |
+| Kampala                        |
+| Zaporizzja                     |
+| Lviv                           |
+| Kryvyi Rig                     |
+| Mykolajiv                      |
+| Barquisimeto                   |
+| Valencia                       |
+| Ciudad Guayana                 |
+| Volgograd                      |
+| Voronez                        |
+| Krasnojarsk                    |
+| Saratov                        |
+| Toljatti                       |
+| Uljanovsk                      |
+| Izevsk                         |
+| Krasnodar                      |
+| Jaroslavl                      |
+| Habarovsk                      |
+| Vladivostok                    |
+| Irkutsk                        |
+| Barnaul                        |
+| Novokuznetsk                   |
+| Penza                          |
+| Rjazan                         |
+| Orenburg                       |
+| Lipetsk                        |
+| Nabereznyje T?elny             |
+| Tula                           |
+| Tjumen                         |
+| Haiphong                       |
+| Detroit                        |
+| San Jose                       |
+| Indianapolis                   |
+| San Francisco                  |
+| Jacksonville                   |
+| Columbus                       |
+| Austin                         |
+| Baltimore                      |
+| Memphis                        |
+| Milwaukee                      |
+| Boston                         |
+| Washington                     |
+| Nashville-Davidson             |
+| El Paso                        |
+| Seattle                        |
+| Denver                         |
+| Charlotte                      |
+| Fort Worth                     |
+| Portland                       |
+| Oklahoma City                  |
+| Bulawayo                       |
++--------------------------------+
+303 rows in set (0.01 sec)
+
+mysql> SELECT name FROM country
+    -> WHERE continent = 'Europe';
++-------------------------------+
+| name                          |
++-------------------------------+
+| Albania                       |
+| Andorra                       |
+| Austria                       |
+| Belgium                       |
+| Bulgaria                      |
+| Bosnia and Herzegovina        |
+| Belarus                       |
+| Switzerland                   |
+| Czech Republic                |
+| Germany                       |
+| Denmark                       |
+| Spain                         |
+| Estonia                       |
+| Finland                       |
+| France                        |
+| Faroe Islands                 |
+| United Kingdom                |
+| Gibraltar                     |
+| Greece                        |
+| Croatia                       |
+| Hungary                       |
+| Ireland                       |
+| Iceland                       |
+| Italy                         |
+| Liechtenstein                 |
+| Lithuania                     |
+| Luxembourg                    |
+| Latvia                        |
+| Monaco                        |
+| Moldova                       |
+| Macedonia                     |
+| Malta                         |
+| Netherlands                   |
+| Norway                        |
+| Poland                        |
+| Portugal                      |
+| Romania                       |
+| Russian Federation            |
+| Svalbard and Jan Mayen        |
+| San Marino                    |
+| Slovakia                      |
+| Slovenia                      |
+| Sweden                        |
+| Ukraine                       |
+| Holy See (Vatican City State) |
+| Yugoslavia                    |
++-------------------------------+
+46 rows in set (0.00 sec)
+
+mysql> SELECT name FROM country
+    -> ORDER BY surfaceArea DESC;
++----------------------------------------------+
+| name                                         |
++----------------------------------------------+
+| Russian Federation                           |
+| Antarctica                                   |
+| Canada                                       |
+| China                                        |
+| United States                                |
+| Brazil                                       |
+| Australia                                    |
+| India                                        |
+| Argentina                                    |
+| Kazakstan                                    |
+| Sudan                                        |
+| Algeria                                      |
+| Congo, The Democratic Republic of the        |
+| Greenland                                    |
+| Saudi Arabia                                 |
+| Mexico                                       |
+| Indonesia                                    |
+| Libyan Arab Jamahiriya                       |
+| Iran                                         |
+| Mongolia                                     |
+| Peru                                         |
+| Chad                                         |
+| Niger                                        |
+| Angola                                       |
+| Mali                                         |
+| South Africa                                 |
+| Colombia                                     |
+| Ethiopia                                     |
+| Bolivia                                      |
+| Mauritania                                   |
+| Egypt                                        |
+| Nigeria                                      |
+| Venezuela                                    |
+| Tanzania                                     |
+| Namibia                                      |
+| Mozambique                                   |
+| Pakistan                                     |
+| Turkey                                       |
+| Chile                                        |
+| Zambia                                       |
+| Myanmar                                      |
+| Afghanistan                                  |
+| Somalia                                      |
+| Central African Republic                     |
+| Ukraine                                      |
+| Madagascar                                   |
+| Botswana                                     |
+| Kenya                                        |
+| France                                       |
+| Yemen                                        |
+| Thailand                                     |
+| Spain                                        |
+| Turkmenistan                                 |
+| Cameroon                                     |
+| Papua New Guinea                             |
+| Sweden                                       |
+| Uzbekistan                                   |
+| Morocco                                      |
+| Iraq                                         |
+| Paraguay                                     |
+| Zimbabwe                                     |
+| Japan                                        |
+| Germany                                      |
+| Congo                                        |
+| Finland                                      |
+| Vietnam                                      |
+| Malaysia                                     |
+| Norway                                       |
+| Poland                                       |
+| Côte d?Ivoire                                |
+| Oman                                         |
+| Italy                                        |
+| Philippines                                  |
+| Ecuador                                      |
+| Burkina Faso                                 |
+| New Zealand                                  |
+| Gabon                                        |
+| Western Sahara                               |
+| Guinea                                       |
+| United Kingdom                               |
+| Uganda                                       |
+| Ghana                                        |
+| Romania                                      |
+| Laos                                         |
+| Guyana                                       |
+| Belarus                                      |
+| Kyrgyzstan                                   |
+| Senegal                                      |
+| Syria                                        |
+| Cambodia                                     |
+| Uruguay                                      |
+| Tunisia                                      |
+| Suriname                                     |
+| Nepal                                        |
+| Bangladesh                                   |
+| Tajikistan                                   |
+| Greece                                       |
+| Nicaragua                                    |
+| North Korea                                  |
+| Malawi                                       |
+| Eritrea                                      |
+| Benin                                        |
+| Honduras                                     |
+| Liberia                                      |
+| Bulgaria                                     |
+| Cuba                                         |
+| Guatemala                                    |
+| Iceland                                      |
+| Yugoslavia                                   |
+| South Korea                                  |
+| Hungary                                      |
+| Portugal                                     |
+| French Guiana                                |
+| Jordan                                       |
+| Azerbaijan                                   |
+| Austria                                      |
+| United Arab Emirates                         |
+| Czech Republic                               |
+| Panama                                       |
+| Sierra Leone                                 |
+| Ireland                                      |
+| Georgia                                      |
+| Sri Lanka                                    |
+| Lithuania                                    |
+| Latvia                                       |
+| Svalbard and Jan Mayen                       |
+| Togo                                         |
+| Croatia                                      |
+| Bosnia and Herzegovina                       |
+| Costa Rica                                   |
+| Slovakia                                     |
+| Dominican Republic                           |
+| Bhutan                                       |
+| Estonia                                      |
+| Denmark                                      |
+| Netherlands                                  |
+| Switzerland                                  |
+| Taiwan                                       |
+| Guinea-Bissau                                |
+| Moldova                                      |
+| Belgium                                      |
+| Lesotho                                      |
+| Armenia                                      |
+| Solomon Islands                              |
+| Albania                                      |
+| Equatorial Guinea                            |
+| Burundi                                      |
+| Haiti                                        |
+| Rwanda                                       |
+| Macedonia                                    |
+| Djibouti                                     |
+| Belize                                       |
+| Israel                                       |
+| El Salvador                                  |
+| Slovenia                                     |
+| New Caledonia                                |
+| Fiji Islands                                 |
+| Kuwait                                       |
+| Swaziland                                    |
+| East Timor                                   |
+| Bahamas                                      |
+| Vanuatu                                      |
+| Falkland Islands                             |
+| Gambia                                       |
+| Qatar                                        |
+| Jamaica                                      |
+| Lebanon                                      |
+| Cyprus                                       |
+| Puerto Rico                                  |
+| French Southern territories                  |
+| Palestine                                    |
+| Brunei                                       |
+| Trinidad and Tobago                          |
+| Cape Verde                                   |
+| French Polynesia                             |
+| South Georgia and the South Sandwich Islands |
+| Samoa                                        |
+| Luxembourg                                   |
+| Réunion                                      |
+| Mauritius                                    |
+| Comoros                                      |
+| Guadeloupe                                   |
+| Faroe Islands                                |
+| Martinique                                   |
+| Hong Kong                                    |
+| Sao Tome and Principe                        |
+| Netherlands Antilles                         |
+| Dominica                                     |
+| Kiribati                                     |
+| Micronesia, Federated States of              |
+| Bahrain                                      |
+| Tonga                                        |
+| Saint Lucia                                  |
+| Singapore                                    |
+| Guam                                         |
+| Andorra                                      |
+| Northern Mariana Islands                     |
+| Palau                                        |
+| Seychelles                                   |
+| Antigua and Barbuda                          |
+| Barbados                                     |
+| Turks and Caicos Islands                     |
+| Saint Vincent and the Grenadines             |
+| Mayotte                                      |
+| Heard Island and McDonald Islands            |
+| Virgin Islands, U.S.                         |
+| Grenada                                      |
+| Malta                                        |
+| Saint Helena                                 |
+| Maldives                                     |
+| Cayman Islands                               |
+| Saint Kitts and Nevis                        |
+| Niue                                         |
+| Saint Pierre and Miquelon                    |
+| Cook Islands                                 |
+| Wallis and Futuna                            |
+| American Samoa                               |
+| Aruba                                        |
+| Marshall Islands                             |
+| Liechtenstein                                |
+| Virgin Islands, British                      |
+| Christmas Island                             |
+| Montserrat                                   |
+| Anguilla                                     |
+| British Indian Ocean Territory               |
+| San Marino                                   |
+| Bouvet Island                                |
+| Bermuda                                      |
+| Pitcairn                                     |
+| Norfolk Island                               |
+| Tuvalu                                       |
+| Nauru                                        |
+| Macao                                        |
+| United States Minor Outlying Islands         |
+| Cocos (Keeling) Islands                      |
+| Tokelau                                      |
+| Gibraltar                                    |
+| Monaco                                       |
+| Holy See (Vatican City State)                |
++----------------------------------------------+
+239 rows in set (0.00 sec)
+
+mysql> SELECT city.name, country.name FROM city
+    -> INNER JOIN country
+    -> ON city.countrycode = country.code
+    -> WHERE country.name = 'Netherlands';
++------------------+-------------+
+| name             | name        |
++------------------+-------------+
+| Amsterdam        | Netherlands |
+| Rotterdam        | Netherlands |
+| Haag             | Netherlands |
+| Utrecht          | Netherlands |
+| Eindhoven        | Netherlands |
+| Tilburg          | Netherlands |
+| Groningen        | Netherlands |
+| Breda            | Netherlands |
+| Apeldoorn        | Netherlands |
+| Nijmegen         | Netherlands |
+| Enschede         | Netherlands |
+| Haarlem          | Netherlands |
+| Almere           | Netherlands |
+| Arnhem           | Netherlands |
+| Zaanstad         | Netherlands |
+| ´s-Hertogenbosch | Netherlands |
+| Amersfoort       | Netherlands |
+| Maastricht       | Netherlands |
+| Dordrecht        | Netherlands |
+| Leiden           | Netherlands |
+| Haarlemmermeer   | Netherlands |
+| Zoetermeer       | Netherlands |
+| Emmen            | Netherlands |
+| Zwolle           | Netherlands |
+| Ede              | Netherlands |
+| Delft            | Netherlands |
+| Heerlen          | Netherlands |
+| Alkmaar          | Netherlands |
++------------------+-------------+
+28 rows in set (0.00 sec)
+
+mysql> SELECT name, population
+    -> FROM city
+    -> WHERE name = 'Rotterdam';
++-----------+------------+
+| name      | population |
++-----------+------------+
+| Rotterdam |     593321 |
++-----------+------------+
+1 row in set (0.00 sec)
+
+
+SELECT name, surfaceArea FROM country
+    -> ORDER BY surfaceArea DESC LIMIT 10;
++--------------------+-------------+
+| name               | surfaceArea |
++--------------------+-------------+
+| Russian Federation | 17075400.00 |
+| Antarctica         | 13120000.00 |
+| Canada             |  9970610.00 |
+| China              |  9572900.00 |
+| United States      |  9363520.00 |
+| Brazil             |  8547403.00 |
+| Australia          |  7741220.00 |
+| India              |  3287263.00 |
+| Argentina          |  2780400.00 |
+| Kazakstan          |  2724900.00 |
++--------------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT name, population FROM city
+    -> ORDER BY population DESC LIMIT 10;
++------------------+------------+
+| name             | population |
++------------------+------------+
+| Mumbai (Bombay)  |   10500000 |
+| Seoul            |    9981619 |
+| São Paulo        |    9968485 |
+| Shanghai         |    9696300 |
+| Jakarta          |    9604900 |
+| Karachi          |    9269265 |
+| Istanbul         |    8787958 |
+| Ciudad de México |    8591309 |
+| Moscow           |    8389200 |
+| New York         |    8008278 |
++------------------+------------+
+10 rows in set (0.01 sec)
+
+mysql> SELECT SUM(population)
+    -> AS world_population
+    -> FROM country;
++------------------+
+| world_population |
++------------------+
+|       6078749450 |
++------------------+
+1 row in set (0.00 sec)
+
+
+
