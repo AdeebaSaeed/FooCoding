@@ -1,0 +1,84 @@
+mysql> CREATE DATABASE hr;
+
+mysql> USE hr;
+Database changed
+mysql> CREATE TABLE locations (
+    -> location_id INT PRIMARY KEY,
+    -> l_city VARCHAR(50),
+    -> l_country VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE employee (
+    -> e_id INT PRIMARY KEY,
+    -> e_name VARCHAR(50) NOT NULL,
+    -> e_department VARCHAR(50),
+    -> location_id INT,
+    -> FOREIGN KEY(location_id) REFERENCES locations(location_id)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO locations (location_id, l_city, l_country) VALUES
+    -> (1, 'malmo' , 'sweden'),
+    -> (2, 'malmo' , 'sweden'),
+    -> (3, 'malmo', 'sweden'),
+    -> (4, 'malmo', 'sweden'),
+    -> (5, 'malmo', 'sweden'),
+    -> (6, 'malmo', 'sweden'),
+    -> (7, 'malmo', 'sweden'),
+    -> (8, 'malmo', 'sweden'),
+    -> (9, 'malmo', 'sweden'),
+    -> (10, 'malmo', 'sweden');
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO employee (e_id ,e_name, e_department, location_id) VALUES
+    -> (101, 'mark','finance',1),
+    -> (102, 'john','sales', 2),
+    -> (103, 'maria','business', 3),
+    -> (104, 'sana', 'marketing',4),
+    -> (105, 'sara', 'sales',5),
+    -> (106, 'ali', 'comouter',6),
+    -> (107, 'stefan', 'services',7),
+    -> (108, 'jonas', 'account',8),
+    -> (109, 'sebastian', 'finance',9),
+    -> (110, 'martin', 'sales',10)
+    -> ;
+Query OK, 10 rows affected (0.00 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM employee;
++------+-----------+--------------+-------------+
+| e_id | e_name    | e_department | location_id |
++------+-----------+--------------+-------------+
+|  101 | mark      | finance      |           1 |
+|  102 | john      | sales        |           2 |
+|  103 | maria     | business     |           3 |
+|  104 | sana      | marketing    |           4 |
+|  105 | sara      | sales        |           5 |
+|  106 | ali       | comouter     |           6 |
+|  107 | stefan    | services     |           7 |
+|  108 | jonas     | account      |           8 |
+|  109 | sebastian | finance      |           9 |
+|  110 | martin    | sales        |          10 |
++------+-----------+--------------+-------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM locations;
++-------------+--------+-----------+
+| location_id | l_city | l_country |
++-------------+--------+-----------+
+|           1 | malmo  | sweden    |
+|           2 | malmo  | sweden    |
+|           3 | malmo  | sweden    |
+|           4 | malmo  | sweden    |
+|           5 | malmo  | sweden    |
+|           6 | malmo  | sweden    |
+|           7 | malmo  | sweden    |
+|           8 | malmo  | sweden    |
+|           9 | malmo  | sweden    |
+|          10 | malmo  | sweden    |
++-------------+--------+-----------+
+10 rows in set (0.00 sec)
+
+
