@@ -1,0 +1,48 @@
+ SELECT country.name, SUM(city.population) AS total_population_cities
+    -> FROM country
+    -> JOIN city ON country.code = city.countrycode
+    -> GROUP BY country.name
+    -> HAVING COUNT(city.name) > 10 and SUM(city.population) > 50000000
+    -> ORDER BY total_population_cities ASC;
++--------------------+-------------------------+
+| name               | total_population_cities |
++--------------------+-------------------------+
+| Mexico             |                59752521 |
+| Russian Federation |                69150700 |
+| Japan              |                77965107 |
+| United States      |                78625774 |
+| Brazil             |                85876862 |
+| India              |               123298526 |
+| China              |               175953614 |
++--------------------+-------------------------+
+7 rows in set (0.01 sec)
+
+mysql> SELECT city.name, city.population
+    -> FROM country
+    -> JOIN city ON country.code = city.countrycode
+    -> WHERE country.name IN (
+    ->   SELECT country.name
+    ->   FROM country
+    ->   JOIN city ON country.code = city.countrycode
+    ->   GROUP BY country.name
+    ->   HAVING COUNT(city.name) > 10 and SUM(city.population) > 50000000
+    -> )
+    -> and city.population > 5000000
+    -> ORDER BY city.population ASC;
++------------------+------------+
+| name             | population |
++------------------+------------+
+| Tianjin          |    5286800 |
+| Rio de Janeiro   |    5598953 |
+| Chongqing        |    6351600 |
+| Delhi            |    7206704 |
+| Peking           |    7472000 |
+| Tokyo            |    7980230 |
+| New York         |    8008278 |
+| Moscow           |    8389200 |
+| Ciudad de México |    8591309 |
+| Shanghai         |    9696300 |
+| São Paulo        |    9968485 |
+| Mumbai (Bombay)  |   10500000 |
++------------------+------------+
+12 rows in set (0.01 sec)
