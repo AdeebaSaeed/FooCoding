@@ -1,0 +1,16 @@
+INSERT INTO countrylanguage (CountryCode, Language)
+VALUES ('USA', 'English'),
+       ('USA', 'Spanish'),
+       ('USA', 'French'),
+       ('USA', 'German'),
+       ('USA', 'Italian'),
+       ('USA', 'Portuguese'),
+       ('USA', 'Dutch'), 
+       ('USA', 'Japanese');
+
+-- Insert one more row for 'USA' to trigger the alert
+INSERT INTO countrylanguage (CountryCode, Language)
+VALUES ('USA', 'Korean');
+
+-----Following error message it shows
+Error Code: 1644. Total number of languages equals or exceeds 10	0.000 sec
