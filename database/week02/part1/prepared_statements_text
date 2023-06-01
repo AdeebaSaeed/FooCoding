@@ -1,0 +1,50 @@
+Prepar statements 
+number 1:
+What is the capital of country X? (Accept X from user)
+
+-- Prepare the statement
+PREPARE capital_statement FROM 'SELECT city.name AS capital FROM country INNER JOIN city ON country.capital = city.id WHERE country.name = ?';
+
+-- Set the parameter value
+SET @country_name = ?; -- User input
+
+-- Execute the statement
+EXECUTE capital_statement USING @country_name;
+
+
+Number:2
+List all the languages spoken in the region Y. (Accept Y from user)
+-- Prepare the statement
+PREPARE languages_statement FROM 'SELECT DISTINCT cl.language FROM country c  JOIN countrylanguage cl ON c.code = cl.countrycode WHERE c.region = ?' ;
+
+-- Set the parameter value
+SET @region = ?; -- User input
+
+-- Execute the statement
+EXECUTE languages_statement USING @region;
+
+Number :3
+Find the number of cities in which language Z is spoken. (Accept Z from user)
+
+-- Prepare the statement
+PREPARE city_count_statement FROM 'SELECT COUNT(DISTINCT city.id) AS city_count FROM city INNER JOIN country ON city.CountryCode = country.Code INNER JOIN countrylanguage ON country.Code = countrylanguage.CountryCode WHERE countrylanguage.Language = ?';
+
+-- Set the parameter value
+SET @language = ?; -- User input
+
+-- Execute the statement
+EXECUTE city_count_statement USING @language;
+
+
+Number 4:
+List all the continents with the number of languages spoken in each continent.
+
+-- Prepare the statement
+PREPARE continent_languages_statement FROM 'SELECT continent, COUNT(DISTINCT language) AS language_count FROM country INNER JOIN countrylanguage ON country.Code = countrylanguage.CountryCode GROUP BY continent';
+
+
+-- Set the parameter value
+SET@continent = ?  
+
+-- Execute the statement
+EXECUTE continent_languages_statement;
