@@ -35,8 +35,8 @@ rl.question('Select one of the following Query options ):\n1. Enter a country na
   (option) => {
 
     switch (option) {
-      
-      case '1': // First query
+      // What is the capital of country X ? (Accept X from user)
+      case '1': 
         rl.question("Write a country's name and press enter.", (value) => {
           const queryOne = 'SELECT city.name FROM city INNER JOIN country ON city.id = country.capital WHERE country.name = ?';
           connection.prepare(queryOne, (err, statement) => {
@@ -61,8 +61,10 @@ rl.question('Select one of the following Query options ):\n1. Enter a country na
           });
         });
         break;
-   
-      case '2': // Second query
+        
+         // List all the languages spoken in the region Y (Accept Y from user)
+        
+      case '2': 
         rl.question("Write a region in the world and press enter.", (value) => {
           const queryTwo = 'SELECT countrylanguage.language FROM countrylanguage INNER JOIN country ON countrylanguage.countrycode = country.code WHERE country.region = ?';
           connection.prepare(queryTwo, (err, statement) => {
@@ -87,8 +89,10 @@ rl.question('Select one of the following Query options ):\n1. Enter a country na
           });
         });
         break;
+        
+        // Find the number of cities in which language Z is spoken (Accept Z from user)
 
-      case '3': // Third query
+      case '3': 
         rl.question("Select a language.", (value) => {
           const queryThree = 'SELECT COUNT(city.name) FROM city INNER JOIN countrylanguage ON city.countrycode = countrylanguage.countrycode WHERE countrylanguage.language = ?';
           connection.prepare(queryThree, (err, statement) => {
@@ -113,8 +117,10 @@ rl.question('Select one of the following Query options ):\n1. Enter a country na
           });
         });
         break;
+        
+        //List all the continents with the number of languages spoken in each continent.
       
-       case '4': // Fourth query
+       case '4': 
            const queryFour = 'SELECT country.continent, COUNT(countrylanguage.language) AS languages_number FROM country INNER JOIN countrylanguage ON country.code = countrylanguage.countrycode GROUP BY country.continent';
            connection.prepare(queryFour, (err, statement) => {
              if (err) {
@@ -137,7 +143,9 @@ rl.question('Select one of the following Query options ):\n1. Enter a country na
            })
            break;
         
-        case '5': // Fifth query
+        // last query
+        
+        case '5': 
           rl.question("Select a country.", (value) => {
             const queryFive = "SELECT c2.name FROM country c1 INNER JOIN country c2 ON c1.code != c2.code AND c1.continent = c2.continent INNER JOIN countrylanguage cl1 ON cl1.countryCode = c1.code INNER JOIN countrylanguage cl2 ON cl2.countryCode = c2.code WHERE c1.name = ? AND cl1.language = cl2.language AND cl1.isofficial = cl2.isofficial AND cl1.isofficial = 'T'";
             connection.prepare(queryFive, (err, statement) => {
@@ -164,3 +172,5 @@ rl.question('Select one of the following Query options ):\n1. Enter a country na
           break;
       }
     });
+// END
+
