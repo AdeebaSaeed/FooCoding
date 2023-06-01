@@ -1,5 +1,6 @@
 // this is new code
 const mysql = require('mysql2');
+const readline = require('readline');
 
 // Create a MySQL connection
 const connection = mysql.createConnection({
