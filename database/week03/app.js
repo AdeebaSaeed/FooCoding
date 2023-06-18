@@ -49,16 +49,11 @@ app.delete('/todo_lists/:listId/items/:user_id', async (req, res) => {
     );
 
     connection.release();
-
-    
-    if (result.affectedRows > 0) {
-      res.status(200).json({ message: 'List deleted successfully' });
-    } else {
-      res.status(404).json({ message: 'List not found' });
-    }
+   
+    res.status(200).json({ message: 'Item deleted from todo_lists' });
   } catch (error) {
-    console.error('Failed to delete list:', error);
-    res.status(500).send('Something went wrong. Please contact the administrator.');
+    console.error(error);
+    res.status(500).json({ error: 'Failed to delete item from todo_lists' });
   }
 });
 
