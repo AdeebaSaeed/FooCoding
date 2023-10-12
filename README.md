@@ -9,6 +9,9 @@ This repository contains a comprehensive overview of key topics covered in our l
 4. Mastering Database Management with MySQL and Command Line Interface (CLI)
 5. Immersive Dive into the World of React with typescript and Vite.
 
-Before achieving course completion, we were tasked with an enriching final project, mirroring a real-world experience within a typical software company. I invite you to explore my 
+
 ## Final project
+
+Before achieving course completion, we were tasked with an enriching final project, mirroring a real-world experience within a typical software company. I invite you to explore my 
+
 https://rick-and-morty-web-world.netlify.app
