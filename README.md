@@ -12,6 +12,6 @@ This repository contains a comprehensive overview of key topics covered in our l
 
 ## Final project
 
-Before achieving course completion, we were tasked with an enriching final project, mirroring a real-world experience within a typical software company. I invite you to explore my 
+Before achieving course completion, we were tasked with an enriching final project, mirroring a real-world experience within a typical software company. I invite you to explore my final project. It is a React Project with genuine code without any pakages , used react with typescript with latest Vite.
 
 https://rick-and-morty-web-world.netlify.app
