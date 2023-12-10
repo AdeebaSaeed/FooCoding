@@ -10,9 +10,9 @@ body {
     min-height: 100vh;
 }
 
-header, h2 {
+header, h2 , h1 {
     font-family: 'Times New Roman', Times, serif;
-    padding: 0.9rem;
+    padding: 0.9 rem;
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
