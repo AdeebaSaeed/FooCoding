@@ -44,20 +44,21 @@ ul {
 
 #grid-floats {
     font-family: Georgia, 'Times New Roman', Times, serif; 
-    padding: 1rem;
+    box-sizing: border-box;
+    padding: 1 rem;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 0.5rem;
+    gap: 0.5 rem;
 }
 
 #grid-flex {
     font-family: Georgia, 'Times New Roman', Times, serif; 
-    padding: 1rem;
+    padding: 1 rem;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 0.5rem;
+    gap: 0.5 rem;
 }
 
 .grid-item {
