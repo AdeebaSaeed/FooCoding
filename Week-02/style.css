@@ -16,25 +16,25 @@ header, h2 {
     font-weight: 900;
     text-align: center;
     text-transform: uppercase;
-    background: #0a0a23 ;
-    color:#fff;
+    background: #0a0a23;
+    color: #fff;
     border: solid #fdb347;
-    background-color: .3s ease;
+    background-color: .3s ease; 
     transition: 1s;
 }
 
-.header ,h2:hover{
+.header, h2:hover {
     transform: scale(1);
     z-index: 2;
-    background-color:burlywood;
+    background-color: burlywood;
     cursor: pointer;
 }
+
 img {
     width: 30rem;
     height: 30rem;
     display: flex;
     flex-wrap: wrap;
-    
 }
 
 ul {
@@ -43,7 +43,7 @@ ul {
 }
 
 #grid-floats {
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Georgia, 'Times New Roman', Times, serif; 
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +52,7 @@ ul {
 }
 
 #grid-flex {
-    font-family: Georgia, 'Times New Roman', Times, serif
+    font-family: Georgia, 'Times New Roman', Times, serif; 
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -63,17 +63,14 @@ ul {
 .grid-item {
     border: 0.0625rem solid black;
     transition: 1s;
-  
-    
-    
 }
-.grid-item:hover{
+
+.grid-item:hover {
     transform: scale(1.2);
     z-index: 2;
     cursor: pointer;
-   
-  
 }
+
 
 @media (min-width: 320px) {
     .grid-item:first-child {
