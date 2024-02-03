@@ -28,11 +28,11 @@ Developed a robust Express application seamlessly integrated with a MySQL databa
 
 https://github.com/AdeebaSaeed/FooCoding/tree/main/database/week03
 
-## 6. Portfolio with HTML,CSS and Javascript 
+### 6. Portfolio with HTML,CSS and Javascript 
 https://adeebaportfolio.netlify.app/
 
 
-## Final project
+##    Final project in REACT with Typescript
 
 Before successfully concluding the course, I immersed myself in a complex final project designed to emulate real-world scenarios in a typical software company. I invite you to delve into this project, an intricately crafted React application using TypeScript and driven by the cutting-edge Vite framework. Notably, the project's authenticity shines through its utilization of the Rick and Morty API. Users can effortlessly discover and filter characters by status, gender, and even add favorites. Additionally, the application allows exploration of locations and episodes, enhancing both functionality and user engagement. The implementation is further optimized through the strategic use of React hooks, ensuring a streamlined and efficient development experience
 
