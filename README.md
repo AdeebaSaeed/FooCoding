@@ -10,18 +10,30 @@ This repository contains a comprehensive overview of key topics covered in our l
 5. Immersive Dive into the World of React with typescript and Vite.
 
 ## Small Projects
-### 1. JavaScript Fetch API with Poekemon API
+
+### 1. CSS grids 
+https://github.com/AdeebaSaeed/FooCoding/tree/main/Week-02
+
+### 2. Clone a website 
+https://github.com/AdeebaSaeed/FooCoding/tree/main/week03
+
+### 3. JavaScript Fetch API with Poekemon API
 https://github.com/AdeebaSaeed/FooCoding/tree/main/javascript2/week02
 
-### 2. Portfolio with HTML,CSS and Javascript 
-https://adeebaportfolio.netlify.app/
+### 4. Book app using createElement and appendchild Javascript
+https://github.com/AdeebaSaeed/FooCoding/tree/main/Javascript2/week01
 
-### 3. To-do-app backend with Nodejs,express and Mysql, testing with Postman
+### 5. To-do-app backend with Nodejs,express and Mysql, testing with Postman
+Developed a robust Express application seamlessly integrated with a MySQL database. Skillfully implemented functionalities encompassing data insertion, creation, update, and deletion within a comprehensive to-do app. Rigorously tested these features using Postman, ensuring the application's reliability and robust performance.
+
 https://github.com/AdeebaSaeed/FooCoding/tree/main/database/week03
+
+## 6. Portfolio with HTML,CSS and Javascript 
+https://adeebaportfolio.netlify.app/
 
 
 ## Final project
 
-Before achieving course completion, we were tasked with an enriching final project, mirroring a real-world experience within a typical software company. I invite you to explore my final project. It is a React Project with genuine code without any pakages , used react with typescript with latest Vite.
+Before successfully concluding the course, I immersed myself in a complex final project designed to emulate real-world scenarios in a typical software company. I invite you to delve into this project, an intricately crafted React application using TypeScript and driven by the cutting-edge Vite framework. Notably, the project's authenticity shines through its utilization of the Rick and Morty API. Users can effortlessly discover and filter characters by status, gender, and even add favorites. Additionally, the application allows exploration of locations and episodes, enhancing both functionality and user engagement. The implementation is further optimized through the strategic use of React hooks, ensuring a streamlined and efficient development experience
 
 https://rick-and-morty-web-world.netlify.app
