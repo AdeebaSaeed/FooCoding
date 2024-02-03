@@ -9,6 +9,16 @@ This repository contains a comprehensive overview of key topics covered in our l
 4. Mastering Database Management with MySQL and Command Line Interface (CLI)
 5. Immersive Dive into the World of React with typescript and Vite.
 
+## Small Projects
+### 1. JavaScript Fetch API with Poekemon API
+https://github.com/AdeebaSaeed/FooCoding/tree/main/javascript2/week02
+
+### 2. Portfolio with HTML,CSS and Javascript 
+https://adeebaportfolio.netlify.app/
+
+### 3. To-do-app backend with Nodejs,express and Mysql, testing with Postman
+https://github.com/AdeebaSaeed/FooCoding/tree/main/database/week03
+
 
 ## Final project
 
