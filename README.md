@@ -12,15 +12,24 @@ This repository contains a comprehensive overview of key topics covered in our l
 ## Small Projects
 
 ### 1. CSS grids 
+. Learnt and applied Grids 
 https://github.com/AdeebaSaeed/FooCoding/tree/main/Week-02
 
 ### 2. Clone a website 
+. Basic understanding of HTML5 and CSS (DOM, semantic elements)
+. Learnt to work with ARIA (Thinking about people with disabilities / Google (SEO)
+. Learnt responsive web development using media queries by mobile first approach
 https://github.com/AdeebaSaeed/FooCoding/tree/main/week03
 
 ### 3. JavaScript Fetch API with Poekemon API
+. Learnt to use API 
 https://github.com/AdeebaSaeed/FooCoding/tree/main/javascript2/week02
 
 ### 4. Book app using createElement and appendchild Javascript
+Basic DOM manipulations [img src, innerHTML]
+Code debugging using the browser
+Functions + JSON/Arrays
+Array Manipulations
 https://github.com/AdeebaSaeed/FooCoding/tree/main/Javascript2/week01
 
 ### 5. To-do-app backend with Nodejs,express and Mysql, testing with Postman
